@@ -245,7 +245,7 @@ formSchema = {
   type: 'object'
   required: [
     'firstName', 'lastName', 'email', 'organization', 'role', 'numStudents', 'city'
-    'state', 'country', 'name'
+    'state', 'country'
   ]
   properties:
     password1: { type: 'string' }
