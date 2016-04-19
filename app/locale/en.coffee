@@ -773,7 +773,6 @@
     email_exists: "User exists with this email."
     phone_number: "Phone number"
     phone_number_help: "Where can we reach you during the workday?"
-    role_label: "Your role"
     primary_role_label: "Your Primary Role"
     role_default: "Select Role"
     tech_coordinator: "Technology coordinator"

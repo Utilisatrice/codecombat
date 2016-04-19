@@ -120,7 +120,9 @@ module.exports = class ConvertToTeacherAccountView extends RootView
 
 formSchema = {
   type: 'object'
-  required: ['firstName', 'lastName', 'organization', 'role', 'numStudents']
+  required: [
+    'firstName', 'lastName', 'organization', 'role', 'numStudents', 'city', 'state', 'country'
+  ]
   properties:
     firstName: { type: 'string' }
     lastName: { type: 'string' }
@@ -131,6 +133,7 @@ formSchema = {
     state: { type: 'string' }
     country: { type: 'string' }
     numStudents: { type: 'string' }
+    numStudentsTotal: { type: 'string' }
     educationLevel: {
       type: 'array'
       items: { type: 'string' }
