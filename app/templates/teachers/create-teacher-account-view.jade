@@ -76,9 +76,7 @@ block content
 
         .col-md-4.col-sm-6
           .form-group
-            label.control-label(data-i18n="teachers_quote.role_label")
-            .help-block.small
-              em.text-info(data-i18n="teachers_quote.role_help")
+            label.control-label(data-i18n="teachers_quote.primary_role_label")
             select.form-control(name="role")
               option(data-i18n="teachers_quote.role_default", , value='')
               option(data-i18n="courses.teacher", value="Teacher")
@@ -115,10 +113,25 @@ block content
         .row.m-y-2
           .col-md-offset-2.col-md-4
             .form-group
-              label.control-label(data-i18n="courses.number_students")
+              label.control-label(data-i18n="courses.number_programming_students")
               .help-block.small
                 em.text-info(data-i18n="teachers_quote.num_students_help")
               select.form-control(name="numStudents")
+                option(data-i18n="teachers_quote.num_students_default", value='')
+                option 1-10
+                option 11-50
+                option 51-100
+                option 101-200
+                option 201-500
+                option 501-1000
+                option 1000+
+
+          .col-md-4.col-sm-6
+            .form-group
+              label.control-label
+                span(data-i18n="courses.number_total_students")
+                span.spl.text-muted(data-i18n="signup.optional")
+              select.form-control(name="numStudentsTotal")
                 option(data-i18n="teachers_quote.num_students_default", value='')
                 option 1-10
                 option 11-50
