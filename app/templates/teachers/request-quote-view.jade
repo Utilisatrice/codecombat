@@ -36,13 +36,15 @@ block content
           .row
             .col-md-offset-2.col-md-4.col-sm-6
               .form-group
-                label.control-label(data-i18n="general.username")
+                label.control-label
+                  span(data-i18n="general.username")
+                  span.spl.text-muted(data-i18n="signup.optional")
                 - var name = me.get('name') || '';
                 input.form-control(name="name" value=name, disabled=!!name)
 
             .col-md-4.col-sm-6
               .form-group
-                label.control-label(data-i18n="general.email")
+                label.control-label(data-i18n="share_progress_modal.form_label")
                 - var email = me.get('email') || '';
                 input.form-control(name="email" value=email, disabled=!!email)
 
@@ -72,16 +74,13 @@ block content
             .form-group
               label.control-label
                 span(data-i18n="teachers_quote.phone_number")
-                span.spl.text-muted(data-i18n="signup.optional")
               .help-block.small
                 em.text-info(data-i18n="teachers_quote.phone_number_help")
               input.form-control(name="phoneNumber")
 
           .col-md-4.col-sm-6
             .form-group
-              label.control-label(data-i18n="teachers_quote.role_label")
-              .help-block.small
-                em.text-info(data-i18n="teachers_quote.role_help")
+              label.control-label(data-i18n="teachers_quote.primary_role_label")
               select.form-control(name="role")
                 option(data-i18n="teachers_quote.role_default", , value='')
                 option(data-i18n="courses.teacher", value="Teacher")
@@ -90,7 +89,18 @@ block content
                 option(data-i18n="teachers_quote.principal", value="Principal")
                 option(data-i18n="teachers_quote.superintendent", value="Superintendent")
                 option(data-i18n="teachers_quote.parent", value="Parent")
-
+                
+        .row
+          .col-md-offset-2.col-md-4.col-sm-6
+            .form-group
+              label.control-label(data-i18n="teachers_quote.purchaser_role_label")
+              select.form-control(name="purchaserRole")
+                option(data-i18n="teachers_quote.role_default", , value='')
+                option(data-i18n="teachers_quote.influence_advocate", value="Influence/Advocate")
+                option(data-i18n="teachers_quote.evaluate_recommend", value="Evaluate/Recommend")
+                option(data-i18n="teachers_quote.approve_funds", value="Approve Funds")
+                option(data-i18n="teachers_quote.no_purchaser_role", value="No role in purchase decisions")
+                
       #form-school-info
         .row
           .col-md-offset-2.col-md-4.col-sm-6
@@ -118,10 +128,23 @@ block content
         .row
           .col-md-offset-2.col-md-4
             .form-group
-              label.control-label(data-i18n="courses.number_students")
+              label.control-label(data-i18n="courses.number_programming_students")
               .help-block.small
                 em.text-info(data-i18n="teachers_quote.num_students_help")
               select.form-control(name="numStudents")
+                option(data-i18n="teachers_quote.num_students_default", value='')
+                option 1-10
+                option 11-50
+                option 51-100
+                option 101-200
+                option 201-500
+                option 501-1000
+                option 1000+
+                
+          .col-md-4.col-sm-6
+            .form-group
+              label.control-label(data-i18n="courses.number_total_students")
+              select.form-control(name="numStudentsTotal")
                 option(data-i18n="teachers_quote.num_students_default", value='')
                 option 1-10
                 option 11-50

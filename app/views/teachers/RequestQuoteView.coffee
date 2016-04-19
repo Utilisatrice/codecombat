@@ -264,19 +264,23 @@ module.exports = class RequestQuoteView extends RootView
 
 requestFormSchemaAnonymous = {
   type: 'object'
-  required: ['firstName', 'lastName', 'email', 'organization', 'role', 'numStudents']
+  required: [
+    'firstName', 'lastName', 'email', 'organization', 'role', 'purchaserRole', 'numStudents', 
+    'numStudentsTotal', 'phoneNumber', 'city', 'state', 'country']
   properties:
     firstName: { type: 'string' }
     lastName: { type: 'string' }
-    name: { type: 'string', minLength: 1 }
+    name: { type: 'string' }
     email: { type: 'string', format: 'email' }
     phoneNumber: { type: 'string' }
     role: { type: 'string' }
+    purchaserRole: { type: 'string' }
     organization: { type: 'string' }
     city: { type: 'string' }
     state: { type: 'string' }
     country: { type: 'string' }
     numStudents: { type: 'string' }
+    numStudentsTotal: { type: 'string' }
     educationLevel: {
       type: 'array'
       items: { type: 'string' }
